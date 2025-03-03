@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГИТЛЕР</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #FFFFF7;
+            margin: 0;
+        }
+
+        .play-button {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: #02E23F;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+
+        .play-button:hover {
+            background-color: #FF0000;
+        }
+
+        /* Стили для текста */
+        .centered-text {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Добавляем текст в верхний центр -->
+    <div class="centered-text">📢📢📢</div>
+    
+    <button class="play-button" id="playButton"></button>
+    <audio id="audio" src="music_1_1_1_1_1.mp3"></audio> <!-- Убедитесь, что файл music.mp3 находится в той же папке -->
+
+    <script>
+        const playButton = document.getElementById('playButton');
+        const audio = document.getElementById('audio');
+
+        playButton.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.volume = 1.0; // Установить громкость на 100%
+                audio.play();
+            } else {
+                audio.pause();
+            }
+        });
+    </script>
+
+</body>
+</html>
